@@ -3,20 +3,20 @@ pipeline {
         node {
             label 'workers'
         }
-    }
-    
+    }    
     stages{
         stage('step 1') {
             steps {
                 echo "you are here"
             }
+        }
     }
-    }
-post {
+    post {
+        always {
+            echo 'Cleaning up workspace'
+        }
         success {
             echo "${env.JOB_NAME} Successful build"
         }
     }
-    
-    
 }
