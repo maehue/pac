@@ -1,7 +1,10 @@
 pipeline {
-    post {
+    stages{
+post {
         success {
             echo "${env.JOB_NAME} Successful build"
         }
     }
+    }
+    
 }
